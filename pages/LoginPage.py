@@ -1,26 +1,26 @@
+from pages.LoginPageUi import  Ui_LoginPage
 from pages.PageWindow import  PageWindow
-from pages.LandingPage import  Ui_LandingPage
 
-class LandingPage(PageWindow):
+class LoginPage(PageWindow):
     def __init__(self):
         super().__init__()
-        ui = Ui_LandingPage()
+        ui = Ui_LoginPage()
         ui.setupUi(self)
-        self.setWindowTitle("Netflix")
+        self.setWindowTitle("Login Netflix")
         self.ui = ui
         self.UiComponents()
 
 
     def UiComponents(self):
 
-        self.ui.SignInButton.clicked.connect(
-            self.make_handleButton("signInButton")
+        self.ui.BackButtton.clicked.connect(
+            self.make_handleButton("backButton")
         )
-        self.ui.GetStartedButton.clicked.connect(
+        self.ui.SettingButton.clicked.connect(
             self.make_handleButton("searchButton")
         )
 
-        self.ui.getStartedButton2.clicked.connect(
+        self.ui.LoginButton.clicked.connect(
             self.make_handleButton("searchButton")
         )
 
@@ -28,6 +28,6 @@ class LandingPage(PageWindow):
         def handleButton():
             if button == "searchButton":
                 self.goto("search")
-            if button == "signInButton":
-                self.goto("loginPage")
+            if button == "backButton":
+                self.goto("main")
         return handleButton

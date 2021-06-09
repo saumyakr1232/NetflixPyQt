@@ -6,6 +6,7 @@ from PyQt5.QtGui import QIcon
 
 from pages.MainWindow import LandingPage
 from pages.SearchWindow import SearchWindow
+from pages.LoginPage import LoginPage
 
 from pages.PageWindow import PageWindow
 
@@ -29,6 +30,7 @@ class Window(QMainWindow):
         self.m_pages = {}
         self.register(LandingPage(), "main")
         self.register(SearchWindow(), "search")
+        self.register(LoginPage(), "loginPage")
 
         self.goto("main")
 
